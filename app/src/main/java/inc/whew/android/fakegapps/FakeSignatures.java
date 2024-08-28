@@ -34,16 +34,46 @@ public class FakeSignatures implements IXposedHookLoadPackage {
 
         String classToHook;
         switch (Build.VERSION.SDK_INT) {
-            case Build.VERSION_CODES.UPSIDE_DOWN_CAKE:
-            case Build.VERSION_CODES.TIRAMISU:
-                classToHook = "com.android.server.pm.ComputerEngine";
+            case Build.VERSION_CODES.BASE: // SDK 1
+            case Build.VERSION_CODES.BASE_1_1: // SDK 2
+            case Build.VERSION_CODES.CUPCAKE: // SDK 3
+            case Build.VERSION_CODES.DONUT: // SDK 4
+            case Build.VERSION_CODES.ECLAIR: // SDK 5
+            case Build.VERSION_CODES.ECLAIR_0_1: // SDK 6
+            case Build.VERSION_CODES.ECLAIR_MR1: // SDK 7
+            case Build.VERSION_CODES.FROYO: // SDK 8
+            case Build.VERSION_CODES.GINGERBREAD: // SDK 9
+            case Build.VERSION_CODES.GINGERBREAD_MR1: // SDK 10
+            case Build.VERSION_CODES.HONEYCOMB: // SDK 11
+            case Build.VERSION_CODES.HONEYCOMB_MR1: // SDK 12
+            case Build.VERSION_CODES.HONEYCOMB_MR2: // SDK 13
+            case Build.VERSION_CODES.ICE_CREAM_SANDWICH: // SDK 14
+            case Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1: // SDK 15
+            case Build.VERSION_CODES.JELLY_BEAN: // SDK 16
+            case Build.VERSION_CODES.JELLY_BEAN_MR1: // SDK 17
+            case Build.VERSION_CODES.JELLY_BEAN_MR2: // SDK 18
+            case Build.VERSION_CODES.KITKAT: // SDK 19
+            case Build.VERSION_CODES.KITKAT_WATCH: // SDK 20
+            case Build.VERSION_CODES.LOLLIPOP: // SDK 21
+            case Build.VERSION_CODES.LOLLIPOP_MR1: // SDK 22
+            case Build.VERSION_CODES.M: // SDK 23
+            case Build.VERSION_CODES.N: // SDK 24
+            case Build.VERSION_CODES.N_MR1: // SDK 25
+            case Build.VERSION_CODES.O: // SDK 26
+            case Build.VERSION_CODES.O_MR1: // SDK 27
+            case Build.VERSION_CODES.P: // SDK 28
+            case Build.VERSION_CODES.Q: // SDK 29
+            case Build.VERSION_CODES.R: // SDK 30
+                classToHook = "com.android.server.pm.PackageManagerService";
                 break;
-            case Build.VERSION_CODES.S_V2:
-            case Build.VERSION_CODES.S:
+            case Build.VERSION_CODES.S: // SDK 31
+            case Build.VERSION_CODES.S_V2: // SDK 32
                 classToHook = "com.android.server.pm.PackageManagerService.ComputerEngine";
                 break;
+            case Build.VERSION_CODES.UPSIDE_DOWN_CAKE: // SDK 33
+            case Build.VERSION_CODES.TIRAMISU: // SDK 34
             default:
-                classToHook = "com.android.server.pm.PackageManagerService";
+                classToHook = "com.android.server.pm.ComputerEngine";
                 break;
         }
 
